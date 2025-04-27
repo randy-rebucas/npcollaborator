@@ -1,0 +1,63 @@
+{
+    "role": "physician",
+    "npiNumber": "tryryryryrt",
+    "rateMatrix": {
+      "additionalNPFee": 100,
+      "additionalStateFee": 100,
+      "monthlyCollaborationRate": 100,
+      "controlledSubstancesMonthlyFee": 100,
+      "controlledSubstancesPerPrescriptionFee": 0
+    },
+    "practiceTypes": [
+      "Primary Care"
+    ],
+    "governmentIdPath": "/uploads/1744696285189-lb.png",
+    "onboardingStatus": "COMPLETED",
+    "profilePhotoPath": "/uploads/1744696278829-avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg",
+    "submissionStatus": "APPROVED",
+    "canCreateListings": false,
+    "backgroundCertification": {
+      "description": "This is a sample for this demo.",
+      "linkedinProfile": "https://linkedin.com/me",
+      "boardCertification": "12345678",
+      "additionalCertifications": [
+        {
+          "issueDate": "2025-04-15T05:51:03.764Z",
+          "certification": "BLS",
+          "certificateUrl": "",
+          "expirationDate": "2025-04-15T05:51:03.764Z",
+          "certificateNumber": ""
+        },
+        {
+          "issueDate": "2025-04-15T05:51:03.764Z",
+          "certification": "ACLS",
+          "certificateUrl": "",
+          "expirationDate": "2025-04-15T05:51:03.764Z",
+          "certificateNumber": ""
+        },
+        {
+          "issueDate": "2025-04-15T05:51:03.764Z",
+          "certification": "PALS",
+          "certificateUrl": "",
+          "expirationDate": "2025-04-15T05:51:03.764Z",
+          "certificateNumber": ""
+        }
+      ]
+    },
+    "licenseAndCertification": {
+      "deaLicenseStates": [
+        {
+          "state": "California",
+          "licenseNumber": "",
+          "expirationDate": null
+        }
+      ],
+      "medicalLicenseStates": [
+        {
+          "state": "California",
+          "licenseNumber": "",
+          "expirationDate": null
+        }
+      ]
+    }
+  }
