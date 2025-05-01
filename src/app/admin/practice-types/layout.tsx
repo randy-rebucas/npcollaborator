@@ -1,15 +1,15 @@
 import AdminHeader from "@/components/Header";
 import { SidebarInset } from "@/components/ui/sidebar";
 
-export default function AdminDashboardPermissionsLayout({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) {
+export default function PracticeTypesLayout({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) {
     return (
         <SidebarInset>
             <AdminHeader breadcrumbs={[
                 { label: 'Admin', href: '/admin' },
-                { label: 'Permissions', href: '/admin/permissions', active: true },
+                { label: 'Practice Types', href: '/admin/practice-types', active: true },
             ]} />
             {children}
             {modal}
         </SidebarInset>
-    );
+    )
 }

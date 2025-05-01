@@ -46,19 +46,17 @@ export default async function TemplatesPage(props: {
             <div className="flex flex-1 flex-col gap-4 p-4">
                 <div className="mx-auto w-full space-y-4">
                     <div className="flex items-center justify-between">
-                        <h1 className="text-2xl font-bold text-foreground">Templates</h1>
-                        <Button asChild>
-                            <Link href="/admin/templates/new" className="flex items-center gap-2">
-                                <PlusIcon className="w-4 h-4" />
-                                Add Template
-                            </Link>
-                        </Button>
+                        <h1 className="text-2xl font-bold">Templates</h1>
+                        <div className="flex items-center gap-4">
+                            <Search placeholder='Search templates...' />
+                            <Button asChild>
+                                <Link href="/admin/templates/new" className="flex items-center gap-2">
+                                    <PlusIcon className="w-4 h-4" />
+                                    Add Template
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
-
-                    <div className="flex items-center gap-4">
-                        <Search placeholder='Search templates...' />
-                    </div>
-
                     <div className="rounded-md border border-border">
                         <Table>
                             <TableHeader>

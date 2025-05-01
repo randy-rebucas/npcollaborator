@@ -68,7 +68,7 @@ export default function IssueForm({ id }: IssueFormProps) {
                 if (response.ok) {
                     toast.success("Issue updated successfully");
                     form.reset();
-                    router.push("/admin/help/issues");
+                    router.push("/admin/issues");
                 } else {
                     toast.error("Failed to update issue");
                 }
@@ -81,7 +81,7 @@ export default function IssueForm({ id }: IssueFormProps) {
                 if (response.ok) {
                     toast.success("Issue added successfully");
                     form.reset();
-                    router.push("/admin/help/issues");
+                    router.push("/admin/issues");
                 } else {
                     console.error("Failed to add issue");
                     toast.error("Failed to add issue");

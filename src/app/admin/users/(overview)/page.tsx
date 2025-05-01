@@ -6,6 +6,8 @@ import { SearchParams } from "@/types/search-params";
 import UserTable from "@/components/user/UserTable";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, PaginationEllipsis } from "@/components/ui/pagination";
 import { ProfileSkeleton } from "@/components/Skeletons";
+import { SidebarInset } from "@/components/ui/sidebar";
+
 export const metadata: Metadata = {
     title: 'Admin Users',
 };
@@ -46,58 +48,59 @@ export default async function AdminUsers(props: {
     const pages = generatePagination();
 
     return (
-        <>
-            <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-bold">Users</h1>
+        <SidebarInset>
+            <div className="flex flex-1 flex-col gap-4 p-4">
+                <div className="mx-auto w-full space-y-4">
+                    <div className="flex items-center justify-between">
+                        <h1 className="text-2xl font-bold">Users</h1>
+                        <div className="flex items-center gap-4">
+                            <Search placeholder='Search users...' />
+                        </div>
+                    </div>
+                    <div className="rounded-md border">
+                        <Suspense
+                            key={query + currentPage}
+                            fallback={<ProfileSkeleton />}>
+                            <UserTable users={users} />
+                        </Suspense>
+                    </div>
+
+                    <Pagination>
+                        <PaginationContent>
+                            <PaginationItem>
+                                <PaginationPrevious
+                                    href={`?page=${currentPage - 1}`}
+                                    aria-disabled={currentPage <= 1}
+                                    className={currentPage <= 1 ? 'pointer-events-none opacity-50' : ''}
+                                />
+                            </PaginationItem>
+
+                            {pages.map((page, i) => (
+                                <PaginationItem key={i}>
+                                    {page === '...' ? (
+                                        <PaginationEllipsis />
+                                    ) : (
+                                        <PaginationLink
+                                            href={`?page=${page}`}
+                                            isActive={currentPage === page}
+                                        >
+                                            {page}
+                                        </PaginationLink>
+                                    )}
+                                </PaginationItem>
+                            ))}
+
+                            <PaginationItem>
+                                <PaginationNext
+                                    href={`?page=${currentPage + 1}`}
+                                    aria-disabled={currentPage >= totalPages}
+                                    className={currentPage >= totalPages ? 'pointer-events-none opacity-50' : ''}
+                                />
+                            </PaginationItem>
+                        </PaginationContent>
+                    </Pagination>
+                </div>
             </div>
-
-            <div className="flex items-center gap-4">
-                <Search placeholder='Search users...' />
-            </div>
-
-            <div className="rounded-md border">
-                <Suspense
-                    key={query + currentPage}
-                    fallback={<ProfileSkeleton />}>
-                    <UserTable users={users} />
-                </Suspense>
-            </div>
-
-            <Pagination>
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationPrevious 
-                            href={`?page=${currentPage - 1}`}
-                            aria-disabled={currentPage <= 1}
-                            className={currentPage <= 1 ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-                    
-                    {pages.map((page, i) => (
-                        <PaginationItem key={i}>
-                            {page === '...' ? (
-                                <PaginationEllipsis />
-                            ) : (
-                                <PaginationLink
-                                    href={`?page=${page}`}
-                                    isActive={currentPage === page}
-                                >
-                                    {page}
-                                </PaginationLink>
-                            )}
-                        </PaginationItem>
-                    ))}
-
-                    <PaginationItem>
-                        <PaginationNext
-                            href={`?page=${currentPage + 1}`}
-                            aria-disabled={currentPage >= totalPages}
-                            className={currentPage >= totalPages ? 'pointer-events-none opacity-50' : ''}
-                        />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
-        </>
-
+        </SidebarInset>
     );
 }   

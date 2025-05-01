@@ -3,7 +3,7 @@
 import { Table, TableRow, TableBody, TableCell, TableHead, TableHeader } from "@/components/ui/table";
 import Link from "next/link";
 import { EyeIcon } from "lucide-react";
-import { MemberResponse } from "@/app/admin/members/webhook/page";
+import { MemberResponse } from "@/app/admin/webhook/page";
 
 interface MemberTableProps {
     members: MemberResponse[];
@@ -39,7 +39,7 @@ export default function MemberTable({ members }: MemberTableProps) {
                         <TableCell className="text-center">{member.createdAt.toLocaleDateString()}</TableCell>
                         <TableCell className="text-center">{member.updatedAt.toLocaleDateString()}</TableCell>
                         <TableCell className="flex items-center justify-end gap-2 p-3">
-                            <Link href={`/admin/members/${member.memberstackId}`} className="flex justify-center items-center">
+                            <Link href={`/admin/memberstack/${member.memberstackId}`} className="flex justify-center items-center">
                                 <EyeIcon className="w-4 h-4" />
                             </Link>
                         </TableCell>

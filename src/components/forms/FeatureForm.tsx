@@ -68,7 +68,7 @@ export default function FeatureForm({ id }: FeatureFormProps) {
                 if (response.ok) {
                     toast.success("Feature updated successfully");
                     form.reset();
-                    router.push("/admin/help/features");
+                    router.push("/admin/features");
                 } else {
                     toast.error("Failed to update feature");
                 }
@@ -81,7 +81,7 @@ export default function FeatureForm({ id }: FeatureFormProps) {
                 if (response.ok) {
                     toast.success("Feature added successfully");
                     form.reset();
-                    router.push("/admin/help/features");
+                    router.push("/admin/features");
                 } else {
                     console.error("Failed to add feature");
                     toast.error("Failed to add feature");

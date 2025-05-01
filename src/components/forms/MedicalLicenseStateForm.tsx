@@ -55,7 +55,7 @@ export default function MedicalLicenseStateForm({ id }: { id: string | null }) {
                 if (response.ok) {
                     toast.success("License state updated successfully");
                     form.reset();
-                    router.push("/admin/miscellaneous/license-states");
+                    router.push("/admin/license-states");
                 } else {
                     toast.error("Failed to update license state");
                 }
@@ -68,7 +68,7 @@ export default function MedicalLicenseStateForm({ id }: { id: string | null }) {
                 if (response.ok) {
                     toast.success("License state added successfully");
                     form.reset();
-                    router.push("/admin/miscellaneous/license-states");
+                    router.push("/admin/license-states");
                 } else {
                     console.error("Failed to add practice type");
                     toast.error("Failed to add license state");

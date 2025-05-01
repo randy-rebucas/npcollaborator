@@ -54,7 +54,7 @@ export default function PracticeTypeForm({ id }: { id: string | null }) {
                 if (response.ok) {
                     toast.success("Practice type updated successfully");
                     form.reset();
-                    router.push("/admin/miscellaneous/practice-types");
+                    router.push("/admin/practice-types");
                 } else {
                     toast.error("Failed to update practice type");
                 }
@@ -67,7 +67,7 @@ export default function PracticeTypeForm({ id }: { id: string | null }) {
                 if (response.ok) {
                     toast.success("Practice type added successfully");
                     form.reset();
-                    router.push("/admin/miscellaneous/practice-types");
+                    router.push("/admin/practice-types");
                 } else {
                     console.error("Failed to add practice type");
                     toast.error("Failed to add practice type");

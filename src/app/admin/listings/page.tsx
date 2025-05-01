@@ -49,16 +49,6 @@ export default async function ListingsPage({ searchParams }: {
                 { label: 'Listings', href: '/admin/dashboard/listings', active: true },
             ]} />
 
-            {/* <div>
-                <h1>Listings</h1>
-                {listings.map((listing: Listing) => {
-                    return (
-                        <div key={listing.id.uuid}>
-                            <h2>{listing.attributes.title}</h2>
-                        </div>
-                    )
-                })}
-            </div> */}
             <div className="flex flex-1 flex-col gap-4 p-4">
                 <div className="mx-auto w-full space-y-4">
                     <div className="flex items-center justify-between">

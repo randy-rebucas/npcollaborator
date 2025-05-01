@@ -75,7 +75,7 @@ export default function EnquiryForm({ id }: EnquiryFormProps) {
                 if (response.ok) {
                     toast.success("Enquiry updated successfully");
                     form.reset();
-                    router.push("/admin/help/enquiries");
+                    router.push("/admin/enquiries");
                 } else {
                     toast.error("Failed to update enquiry");
                 }
@@ -88,7 +88,7 @@ export default function EnquiryForm({ id }: EnquiryFormProps) {
                 if (response.ok) {
                     toast.success("Enquiry added successfully");
                     form.reset();
-                    router.push("/admin/help/enquiries");
+                    router.push("/admin/enquiries");
                 } else {
                     console.error("Failed to add enquiry");
                     toast.error("Failed to add enquiry");

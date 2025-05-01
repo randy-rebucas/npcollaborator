@@ -28,8 +28,13 @@ export async function AdminSidebar() {
             icon: "users",
         },
         {
-            title: "Members",
-            url: "/admin/members",
+            title: "Memberstack Members",
+            url: "/admin/memberstack",
+            icon: "users",
+        },
+        {
+            title: "Memberstack Webhooks",
+            url: "/admin/webhook",
             icon: "users",
         },
         {
@@ -38,13 +43,18 @@ export async function AdminSidebar() {
             icon: "list",
         },
         {
-            title: "FAQ",
-            url: "/admin/faq",
+            title: "Enquiries",
+            url: "/admin/enquiries",
             icon: "faq",
         },
         {
-            title: "Help",
-            url: "/admin/help",
+            title: "Features",
+            url: "/admin/features",
+            icon: "help",
+        },
+        {
+            title: "Issues",
+            url: "/admin/issues",
             icon: "help",
         },
         {
@@ -78,8 +88,13 @@ export async function AdminSidebar() {
             icon: "permissions",
         },
         {
-            title: "Miscellaneous",
-            url: "/admin/miscellaneous",
+            title: "License States",
+            url: "/admin/license-states",
+            icon: "miscellaneous",
+        },
+        {
+            title: "Practice Types",
+            url: "/admin/practice-types",
             icon: "miscellaneous",
         },
         {

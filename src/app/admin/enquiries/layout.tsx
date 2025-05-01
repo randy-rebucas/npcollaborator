@@ -1,15 +1,15 @@
-import AdminHeader from "@/components/Header";
 import { SidebarInset } from "@/components/ui/sidebar";
+import AdminHeader from "@/components/Header";
 
-export default function AdminDashboardRolesLayout({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) {
+export default function EnquiriesLayout({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) {
     return (
         <SidebarInset>
             <AdminHeader breadcrumbs={[
                 { label: 'Admin', href: '/admin' },
-                { label: 'Roles', href: '/admin/roles', active: true },
+                { label: 'Enquiries', href: '/admin/enquiries', active: true },
             ]} />
             {children}
             {modal}
         </SidebarInset>
-    );
+    )
 }

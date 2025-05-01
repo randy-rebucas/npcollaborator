@@ -4,8 +4,6 @@ import EmailNotification from "@/models/EmailNotification";
 import { handleAsync } from '@/lib/errorHandler';
 import { DatabaseError, NotFoundError, ValidationError } from '@/lib/errors';
 
-export const dynamic = 'force-dynamic';
-
 interface GetNotificationsParams {
   page: number;
   search?: string;

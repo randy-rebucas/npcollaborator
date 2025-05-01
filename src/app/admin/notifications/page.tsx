@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     title: 'Admin Notifications',
 };
 
-export const dynamic = 'force-dynamic';
-
 export default async function NotificationsPage(props: {
     searchParams: SearchParams
 }) {
@@ -35,7 +33,7 @@ export default async function NotificationsPage(props: {
     const handleDelete = async (data: FormData) => {
         "use server";
         const itemId = data.get("itemId");
-        await deleteNotification(itemId as string); 
+        await deleteNotification(itemId as string);
     };
 
     return (
@@ -48,17 +46,16 @@ export default async function NotificationsPage(props: {
             <div className="flex flex-1 flex-col gap-4 p-4">
                 <div className="mx-auto w-full space-y-4">
                     <div className="flex items-center justify-between">
-                        <h1 className="text-2xl font-bold text-foreground">Notifications</h1>
-                        <Button asChild>
-                            <Link href="/admin/notifications/new">
-                                <PlusIcon className="w-4 h-4" />
-                                Add Notification
-                            </Link>
-                        </Button>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                        <Search placeholder='Search templates...' />
+                        <h1 className="text-2xl font-bold">Notifications</h1>
+                        <div className="flex items-center gap-4">
+                            <Search placeholder='Search templates...' />
+                            <Button asChild>
+                                <Link href="/admin/notifications/new">
+                                    <PlusIcon className="w-4 h-4" />
+                                    Add Notification
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
 
                     <div className="rounded-md border border-border">
@@ -98,7 +95,7 @@ export default async function NotificationsPage(props: {
                                                     <form action={handleDelete} className="flex justify-center items-center">
                                                         <input type="hidden" name="itemId" value={notification._id} />
                                                         <button type="submit" className="flex justify-center items-center">
-                                                            <TrashIcon className="w-4 h-4 text-destructive hover:text-destructive/80" /> 
+                                                            <TrashIcon className="w-4 h-4 text-destructive hover:text-destructive/80" />
                                                         </button>
                                                     </form>
                                                 </TableCell>
