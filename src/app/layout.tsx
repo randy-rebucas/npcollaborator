@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ClaimProps, LogtoProvider } from "@/providers/logto-session-provider";
+// import { ClaimProps, LogtoProvider } from "@/providers/logto-session-provider";
+// import { logtoConfig } from "./logto";
+// import { getLogtoContext } from "@logto/next/server-actions";
 import { FontSizeProvider } from "@/providers/font-provider";
 import { ApplicationSettingsProvider } from "@/providers/application-settings-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { ClaimProvider } from "@/providers/claim-provider";
-import { logtoConfig } from "./logto";
-import { getLogtoContext } from "@logto/next/server-actions";
+// import { ClaimProvider } from "@/providers/claim-provider";
 import { Toaster } from "@/components/ui/sonner"
 import { getConfig } from "@/app/actions/config"
 
@@ -61,18 +61,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let isAuthenticated = false;
-  let claims = null;
+  // let isAuthenticated = false;
+  // let claims = null;
 
-  try {
-    const logtoContext = await getLogtoContext(logtoConfig, {
-      fetchUserInfo: true
-    });
-    isAuthenticated = logtoContext.isAuthenticated;
-    claims = logtoContext.claims;
-  } catch (error) {
-    console.error('Logto authentication error:', error);
-  }
+  // try {
+  //   const logtoContext = await getLogtoContext(logtoConfig, {
+  //     fetchUserInfo: true
+  //   });
+  //   isAuthenticated = logtoContext.isAuthenticated;
+  //   claims = logtoContext.claims;
+  // } catch (error) {
+  //   console.error('Logto authentication error:', error);
+  // }
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -86,16 +86,16 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <FontSizeProvider>
-            <LogtoProvider
+            {/* <LogtoProvider
               isAuthenticated={isAuthenticated}
               claims={claims as ClaimProps}
-            >
+            > */}
               <ApplicationSettingsProvider>
-                <ClaimProvider>
+                {/* <ClaimProvider> */}
                   {children}
-                </ClaimProvider>
+                {/* </ClaimProvider> */}
               </ApplicationSettingsProvider>
-            </LogtoProvider>
+            {/* </LogtoProvider> */}
           </FontSizeProvider>
         </ThemeProvider>
         <Toaster />

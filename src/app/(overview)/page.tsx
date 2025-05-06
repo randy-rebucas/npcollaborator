@@ -39,7 +39,8 @@
 // };
 
 // export default Home;
-"use client";
+// import { createClient } from '@/utils/supabase/server'
+// import { cookies } from 'next/headers'
 
 import AboutUs from "@/components/home/AboutUs";
 import Banner from "@/components/home/Banner";
@@ -47,7 +48,13 @@ import Brand from "@/components/home/Brand";
 import Matching from "@/components/home/Matching";
 import HowItWork from "@/components/home/HowItWork";
 
-export default function Home() {
+export default async function Home() {
+  // const cookieStore = cookies()
+  // const supabase = createClient(cookieStore)
+
+  // const { data: { user } } = await supabase.auth.getUser();
+  // console.log(user)
+  // const { data: todos } = await supabase.from('todos').select()
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background">
       <Banner />
